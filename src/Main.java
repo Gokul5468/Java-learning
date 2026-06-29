@@ -1,3 +1,4 @@
+/*
 public class Main{
     public static void main(String[] args){
         /*
@@ -157,10 +158,10 @@ public class Main{
              System.out.println("Firday");
          else
              System.out.println("Saturday");
-             */
 
-        int n = 2;
-        switch(n = 2) {
+
+        int n=50;
+        switch(n) {
             case 1:
                 System.out.println("Sunday");
                 break;
@@ -186,5 +187,164 @@ public class Main{
                 System.out.println("Not a day");
         }
 
+
+        //Need for Loops
+        // repeat statement
+        // loop - while , do while , for
+
+        //While loop..
+        int i =1;
+        while(i<=5)
+        {
+            System.out.println("Hi " + i);
+            int j = 1;
+            while(j<=3) { // inner while loop
+                System.out.println("Hello");
+                j++;
+            }
+            i++; //outter while loop.
+        }
+        System.out.println("Bye " + i);
+
+
+
+        // do while loop..
+        int i = 5;
+        do
+        {
+            System.out.println("Welcome");
+            i++;
+        }while(i<=4);
+
+
+
+
+        //for loopp...
+
+        for(int i = 1;i<=5;i++){
+            System.out.println("Gokul");
+        }
+//        int j=0;
+//        for(;j<5;j++){
+//            System.out.println("Sarayu");
+//        }
+//        for(int i = 1;i<6;i++){
+//            System.out.println("Day:" + i);
+//            for(int j = 1;j<=9;j++){
+//                System.out.println((j+8) +"Am" + " - " + (j+9)+"pm");
+//            }
+//        }
+        for(int i = 1;i<6;){
+            System.out.println("Day:" + i);
+            i++;
+        }
+
+
+        //jumps statement ->
+        //continue..
+        for(int i = 0;i<=5;i++) {
+            if (i == 3)
+                continue;
+            System.out.println(i);
+        }
+
+
+
+        int i = 0;
+        while(i<=5){
+            if(i == 3){
+                i++;
+                continue;
+            }
+            System.out.println(i);
+            i++;
+        }
+
+
+        Java continue statement is used for all types of loops but it is generally used in for, while, and do-while loops.
+                In the case of a for loop, the continue keyword forces control to jump immediately to the update statement.
+                Whereas in the case of a while loop or do-while loop, control immediately jumps to the Boolean expression.
+
+
+
+
         }
     }
+
+         */
+
+//Number guessing game..
+/*
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+
+        int random = (int) (Math.random() * 100);
+        //System.out.println(random);
+        int k = 5;
+        System.out.println("Hey buddy! I have choosen the number between 1 to 100 guess the number ?");
+        System.out.printf("you will have %d chances to guess \n", k);
+        Scanner sc = new Scanner(System.in);
+        for (int i = 1; i <= k; i++) {
+            System.out.print("Enter your guess:" );
+            int my_num = sc.nextInt();
+            if (my_num > 100 && my_num < 0) {
+                System.out.println("Invalid number");
+            }
+                if (my_num == random) {
+                    System.out.println("Congarulation.");
+                } else if (my_num < random) {
+                    System.out.print("Guess the higher number: ");
+                    System.out.println(my_num);
+                } else
+                    System.out.print("Guess the lower number: ");
+                    System.out.println(my_num);
+            }
+        System.out.print("You have used all the chances the correct number is:" + random);
+        sc.close();
+        }
+    }
+
+ */
+
+// Now game with attempts..
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        System.out.println("I have choosen a number between 1 to 100 guess the number");
+        int my_guess = (int)(Math.random() * 100);
+        Scanner sc = new Scanner(System.in);
+        boolean playagain = true;
+        while(playagain){
+            int k = 5;
+            int attempts = 0;
+            boolean won = false;
+        for(int i = 0;i<k;i++) {
+            System.out.print("Enter your guess: ");
+            int my_num = sc.nextInt();
+            attempts++;
+            if (my_num == my_guess) {
+
+                System.out.println("Congarulation. we have guessed in " + attempts);
+                won = true;
+                break;
+            } else if (my_num > my_guess) {
+                System.out.println("The number higher: " + my_num);
+            } else {
+                System.out.println("The number is lower" + my_num);
+            }
+        }
+            if(!won){
+                System.out.println("You've used all " + k + " attempts. The correct number was " + my_guess);
+            }
+            System.out.print("Game do you want to continue: (yes/no):");
+            String ans = sc.next();
+            if(ans.equalsIgnoreCase("yes")) {
+                System.out.println("GAME OVER ! the correct answer is " + my_guess);
+            }
+            }
+        }
+    }
+
+
