@@ -1,4 +1,4 @@
-/*
+/* // Palindrone number..
 import java.util.*;
 public class numberproblems {
     public static void main(String[] args){
@@ -24,7 +24,7 @@ public class numberproblems {
 
     }
 }
-*/
+
 
 //another way..
 import java.util.*;
@@ -53,3 +53,30 @@ public class numberproblems{
 
     }
 }
+
+ */
+
+// find plaindrone number in range or not..
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the starting number:" );
+        int min = sc.nextInt();
+        System.out.print("Enter the ending number:" );
+        int max = sc.nextInt();
+        for(int i = min;i<max;i++) {
+            int revnum = 0;
+            int temp = i;
+            int num = i;
+            while (num != 0){
+                int digit = num % 10;
+                revnum = revnum * 10 + digit;
+                num /= 10;
+            }
+            if (temp == revnum)
+                System.out.println(revnum);
+
+            }
+        }
+    }
