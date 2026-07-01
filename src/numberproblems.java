@@ -54,7 +54,7 @@ public class numberproblems{
     }
 }
 
- */
+
 
 // find plaindrone number in range or not..
 import java.util.*;
@@ -80,3 +80,68 @@ public class numberproblems{
             }
         }
     }
+
+
+
+//number is prime or not..
+
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number to check prime or not:" );
+        int num = sc.nextInt();
+        if(num <= 1){
+            System.out.println("Invalid number");
+        }
+        if(num == 2){
+            System.out.println("Prime number");
+        }
+        for(int i = 2;i<num;i++){
+            if(num % i ==0){
+                System.out.println("False");
+                break;
+            }else{
+                System.out.println("True");
+                break;
+            }
+        }
+
+    }
+}
+
+
+
+// optimised..
+
+import java.util.*;
+public class numberproblems{
+    public boolean isprime(int num){
+        int cnt = 0;
+        for(int i = 1;i<=Math.sqrt(num);i++){
+            if(num % i == 0){
+                cnt++;
+                if(num /i != i){
+                    cnt++;
+                }
+            }
+        }
+        return cnt == 2;
+    }
+    public static void main(String[] args){
+        Scanner sc  = new Scanner(System.in);
+        System.out.print("Enter the number to prime or not :" );
+        int num = sc.nextInt();
+        numberproblems obj = new numberproblems();
+        if(obj.isprime(num)){
+            System.out.println(num + "is prime" );
+        }else{
+            System.out.println("not prime.");
+        }
+    }
+
+}
+
+ */
+
+
