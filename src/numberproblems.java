@@ -142,6 +142,74 @@ public class numberproblems{
 
 }
 
+
+
+// prime number in range..
+
+import java.util.Scanner;
+
+public class numberproblems {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number from: ");
+        int min = sc.nextInt();
+        System.out.print("Enter to number: ");
+        int max = sc.nextInt();
+        for (int num = min; num <=max; num++) {
+            int cnt = 0;
+            for (int i = 1; i <=Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    cnt++;
+                    if (num / i != i) {
+                        cnt++;
+
+                    }
+
+                }
+            }
+            if (cnt == 2) {
+                System.out.println(num);
+            }
+        }
+
+    }
+}
+
+ */
+
+//Armstrong number.
+
+/*
+import java.util.*;
+public class numberproblems {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number to check Armstrong number: ");
+        int num = sc.nextInt();
+        int temp = num;
+        int cnt = 0;
+        int sum = 0;
+        int digit = num;
+        while (digit != 0) {
+            cnt++;
+            digit /= 10;
+        }
+
+        while (num != 0) {
+            int arm = num % 10;
+            double n = Math.pow(arm, cnt);
+            sum += n;
+            num /= 10;
+        }
+
+        if (temp == sum) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
+    }
+}
+
  */
 
 
