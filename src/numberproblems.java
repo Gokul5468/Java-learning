@@ -190,7 +190,7 @@ public class numberproblems {
         int cnt = 0;
         int sum = 0;
         int digit = num;
-        while (digit != 0) {
+        while(digit != 0) {
             cnt++;
             digit /= 10;
         }

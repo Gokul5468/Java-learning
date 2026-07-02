@@ -1,3 +1,40 @@
+//varibles..
+
+//public class Methodes{
+//    public static void main(String[] args){
+//        int $gokul = 30;
+//        System.out.println($gokul);
+//    }
+//}
+
+//instance varibles.
+//static var
+//local var
+
+//parameter scope
+
+public class Methodes{
+    static int x = 56;
+    private int y = 33;
+    public void testfunc(int x,int y){
+        Methodes t = new Methodes();
+        this.x = 22;
+        y = 67;
+        y = 45;
+               System.out.println("Geeks:" + t.x);
+               System.out.println("Geeks:" + t.y);
+               System.out.println(y);
+    }
+
+    public static void main(String[] args){
+        Methodes m = new Methodes();
+        m.testfunc(5,6);
+    }
+}
+
+
+
+
 /*
 public class Methodes {
     public static void main(String[] args){
@@ -110,7 +147,7 @@ class Methodes{
     }
 }
 
- */
+
 
 
 public class Methodes {
@@ -130,3 +167,5 @@ public class Methodes {
         System.out.println("Total Employees: " + Methodes.employeeCount); // Output: 3
     }
 }
+
+ */
