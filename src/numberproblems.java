@@ -210,6 +210,138 @@ public class numberproblems {
     }
 }
 
- */
 
+
+//number is perfect number or not.
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter the number to check perfect number or not:");
+        int num = sc.nextInt();
+        int sum = 0;
+        for(int i = 1;i<num;i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+        if(sum == num){
+            System.out.println("it is perfect number.");
+        }else{
+            System.out.println("it is not.");
+        }
+    }
+}
+
+
+
+import java.util.*;
+public class numberproblems{
+    public static boolean isperfect(int n){
+        int sum = 0;
+        for(int i = 1;i*i <= n;i++){
+            if(n % i == 0){
+                if(i*i==n||i ==1){
+                    sum += i;
+                }else{
+                    sum += i + n/i;
+                }
+            }
+        }
+        return sum == n;
+    }
+    public static void main(String[] args){
+        boolean ex1 = isperfect(28);
+        if(ex1){
+            System.out.println("It is perfect number.");
+        }else{
+            System.out.println("it is not.");
+        }
+    }
+}
+
+
+
+// even or odd;
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n % 2 == 0)
+            System.out.println("it is even number");
+        else
+            System.out.println("it is not even number.");
+    }
+}
+
+
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if((n & 1) == 0)
+            System.out.println("it is even number");
+        else
+            System.out.println("it is not even number.");
+    }
+}
+
+
+
+// sum of n natural number..
+//recursion
+
+import java.util.Scanner;
+class numberproblems{
+    public int sumofnaturalnum(int n){
+        if(n ==1){
+            return 1;
+        }
+        return n+sumofnaturalnum(n-1);
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        numberproblems result  = new numberproblems();
+        int res = result.sumofnaturalnum(5);
+        System.out.println(res);
+
+    }
+    }
+
+
+
+public class numberproblems{
+        public static void main(String[] args) {
+            double num1 = 1, num2 = 3, num3 = 5;
+            double maxNum = Math.max(num1, Math.max(num2, num3));
+            System.out.println("The maximum of the three numbers is " + maxNum);  //Print max of the three numbers
+        }
+    }
+
+
+import java.util.*;
+public class numberproblems{
+    public static boolean leapyear(int n){
+        if(n % 400 == 0 ) return true;
+        if(n % 4 == 0) return true;
+        if(n % 100 == 0) return false;
+        return false;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(leapyear(num)) {
+            System.out.println("Yes it is leap year.");
+        }
+            else{
+                System.out.println("not a leap year");
+            }
+        }
+
+    }
+
+ */
 
