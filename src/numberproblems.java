@@ -343,5 +343,258 @@ public class numberproblems{
 
     }
 
+
+
+//reverse a number.
+
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int revnum = 0;
+
+        while(num != 0) {
+            int digit = num % 10;
+            revnum = revnum * 10 + digit;
+            num /= 10;
+        }
+        System.out.println("Reversed number is: " +revnum);
+    }
+}
+
+
+
+// reverse the number by string..
+
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number to reverse:");
+        int num = sc.nextInt();
+        String s = String.valueOf(num);
+        String rev = new StringBuilder(s).reverse().toString();
+        int revnum = Integer.parseInt(rev);
+        System.out.println(revnum);
+
+    }
+}
+
+
+
+import java.util.*;
+public class numberproblems {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number:");
+        int num = sc.nextInt();
+        int temp = num;
+        int mini = 0;
+        int max = 9;
+
+        while (num != 0) {
+            int n = num % 10;
+            if (n > mini) {
+                mini = n;
+
+            }
+            num /= 10;
+        }
+
+        while (temp != 0) {
+            int n = temp % 10;
+            if (n < max) {
+                max = n;
+            }
+            temp /= 10;
+        }
+
+
+        System.out.println("Largest Number:" + mini);
+        System.out.println("samllest number:" +max);
+        sc.close();
+    }
+}
+
+
+
+//Fibonacci series..
+
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number: ");
+        int num = sc.nextInt();
+        if(num == 0){
+            System.out.println(0);
+        }else if(num == 1){
+            System.out.println( "0 1");
+        }else{
+            int a = 0;
+            int b = 1;
+
+            int arr[] = new int[num];
+            arr[0] = 0;
+            arr[1] = 1;
+            for(int i = 2;i<num;i++){
+                arr[i] = arr[i-1] + arr[i-2];
+            }
+            for(int i = 0;i<num;i++){
+                System.out.print(arr[i] + " ");
+            }
+
+        }
+
+
+    }
+}
+
+
+
+
+//better force-->
+
+import java.util.*;
+public class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number:");
+        int n = sc.nextInt();
+        if(n  == 0){
+            System.out.println(n);
+        }else{
+            int last = 1;
+            int secoundlast = 0;
+
+            System.out.print(secoundlast + " "+last+" ");
+            int curr ;
+            for(int i = 2;i<=n;i++){
+                curr = secoundlast+last;
+                secoundlast = last;
+                last = curr;
+                System.out.print(curr+" ");
+
+            }
+        }
+
+    }
+}
+
+
+
+//Factorial of number given.
+
+import java.util.*;
+public class numberproblems {
+    public static int factorial(int n) {
+        if (n == 0)
+            return 1;
+    return n * factorial(n-1);
+}
+public static void main(String[] args){
+        int n= 6;
+        System.out.println(factorial(n));
+}
+
+}
+
+
+
+// power of a number.
+
+import java.util.*;
+class numberproblems{
+    public static void main(String[] args){
+        int x =2;
+        int n = 5;
+
+        int power_no = (int)Math.pow(x,n);
+        System.out.println(power_no);
+    }
+}
+
+
+
+class numberproblems{
+    public static void main(String[] args){
+        int x = 21;
+        int n = 2;
+        int ans = 1;
+        for(int i = 0;i<n;i++){
+            ans = ans*x;
+        }
+        System.out.println(ans);
+    }
+}
+
+
+
+//factors of a given number..
+import java.util.*;
+class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+            for(int i = 1;i<=n;i++){
+                if(n % i == 0){
+                    System.out.print(i + " ");
+                }
+
+        }
+    }
+}
+
+
+//optimised..
+
+import java.util.*;
+class numberproblems{
+    public static void main(String[] args){
+        Scanner sc  = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        for(int i = 1;i * i <= num;i++){
+            if(num % i == 0){
+                if(i != num/i){
+                    System.out.print(i + " " + num/i + " ");
+                }else{
+                    System.out.println(i);
+                }
+            }
+        }
+    }
+}
+
+
+
+// to get in ascending order ..
+
+import java.util.*;
+class numberproblems {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        int sqrt = (int) Math.sqrt(num);
+
+        // Loop 1: print small divisors in ascending order
+        for (int i = 1; i <= sqrt; i++) {
+            if (num % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+
+        // Loop 2: print large divisors in descending order
+        for (int i = sqrt; i >= 1; i--) {
+            if (num % i == 0 && i != num / i) {
+                System.out.print(num / i + " ");
+            }
+        }
+    }
+}
+
  */
 
