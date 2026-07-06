@@ -12,11 +12,62 @@ public class arrays {
         }
 
 
+
+
+    }
+}
+
+ */
+
+/*
+import java.util.*;
+class arrays {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+            System.out.println(Arrays.toString(arr));
     }
 }
 
 
+import java.util.Arrays;
 
+//Passing in function
+public class arrays{
+    public static void main(String[] args){
+    int num[]= {23,4,5,3,3};
+    change(num);
+    System.out.println(Arrays.toString(num));
+    }
+    static void change(int arr[]){
+        arr[0] = 22;
+    }
+}
+
+ */
+
+/*
+// Array with objects..
+import java.util.*;
+class arrays{
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+String str[]  = new String[4];
+for(int i = 0;i<str.length;i++){
+    str[i] = sc.next();
+}
+System.out.println(Arrays.toString(str));
+}
+}
+
+
+
+    //
 //Arrays of Object in java.
 
 import java.util.*;
@@ -187,7 +238,7 @@ class arrays {
     }
 }
 
- */
+
 
 // Taking a input from user of multidimensional array (Runtime) and print the count of even and odd number given by user.
 
@@ -207,6 +258,8 @@ public class arrays{
 
             }
         }
+
+
         for(int i =0;i<n;i++){
             for(int j = 0;j<m;j++){
                 System.out.print(arr[i][j] + " ");
@@ -227,3 +280,100 @@ public class arrays{
             System.out.println("od:" + odd);
     }
 }
+
+
+
+//multi deminsional array..
+
+import java.util.*;
+class arrays{
+    public static void main(String[] args){
+//        int[][] arr = new int[3][];
+//
+//        int[][] arr2D = {
+//                {1,2,3}, //0th index
+//                {4,5,6},  //1st
+//                {7,8,9} // 2nd arr2D[2] == {7,8,9}
+//        };
+
+        //input;;
+        int[][] arr = new int[3][2];
+        Scanner sc = new Scanner(System.in);
+        for(int row  = 0;row<arr.length;row++){
+            for(int col = 0;col<arr[row].length;col++){
+                arr[row][col] = sc.nextInt();
+            }
+        }
+
+//        for(int row  = 0;row<arr.length;row++){
+//            for(int col = 0;col<arr[row].length;col++){
+//                System.out.print(arr[row][col] + " ");
+//            }
+//            System.out.println();
+//        }
+            // output..
+//        for(int row = 0;row<arr.length;row++){
+//            System.out.println(Arrays.toString(arr[row]));
+//        }
+
+        //enchanceed for loop
+        for(int[] a : arr){
+            System.out.println(Arrays.toString(a));
+        }
+
+
+    }
+}
+
+ */
+
+//ArrayList..
+/*
+import java.util.*;
+class arrays {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> list = new ArrayList<>(10);
+        list.add(23);
+        list.add(34); // we can add many as we want.
+
+        System.out.println(list);
+        System.out.println( list.contains(32));
+
+        System.out.print("Enter the size of arraylist:" );
+        int n = sc.nextInt();
+        ArrayList<Integer> list1 = new ArrayList<>();
+            for (int i = 0; i < n; i++) {
+                list1.add(sc.nextInt());
+            }
+            for (int i = 0; i < list1.size(); i++) {
+                System.out.print(list1.get(i) + " ");
+            }
+        }
+    }
+
+*/
+
+//multi dimensional by arraylist.
+import java.util.*;
+class arrays{
+public static void main(String[] args) {
+    ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
+
+   //initialisation.
+    for(int i = 0;i<3;i++){
+        list.add(new ArrayList<>());
+    }
+
+    //add elements
+    for(int i = 0;i<3;i++){
+        for(int j = 0;j<3;j++){
+            list.get(j).add(sc.nextInt());
+        }
+    }
+    System.out.println(list);
+}
+}
+
+
