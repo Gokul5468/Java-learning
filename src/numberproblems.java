@@ -212,7 +212,7 @@ public class numberproblems {
 
 
 
-//number is perfect number or not.
+//number is perfect number or not.  -> a number that is the sum of its proper divisor.
 import java.util.*;
 public class numberproblems{
     public static void main(String[] args){
@@ -598,3 +598,149 @@ class numberproblems {
 
  */
 
+
+// print all prime factors of given number.
+/*
+import java.util.*;
+class numberproblems{
+
+    static void factors(int n) {
+        for (int i = 1; i *i<= n; i++) {
+            if (n % i == 0) {
+                if(isprime(i))
+                    System.out.println(i);
+                if (i != n / i && isprime(n/i))
+                    System.out.println(n/i);
+
+            }
+        }
+    }
+    static boolean isprime(int num) {
+            int cnt = 0;
+            for (int i = 1; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    cnt++;
+                    if (num / i!= i) {
+                        cnt++;
+                    }
+                }
+            }
+        return cnt ==2;
+    }
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        int num = sc.nextInt();
+        factors(num);
+
+    }
+}
+
+
+
+
+//optimised.
+
+import java.util.*;
+class numberproblems{
+    public List<Integer> getprimes(int n){
+        List<Integer>primeFactors = new ArrayList<>();
+        if(n % 2 == 0){
+            primeFactors.add(2);
+        }while(n % 2 ==0){
+            n /=2;
+        }
+        for(int i = 3;i*i<=n;i++) {
+            if (n % i == 0)
+                primeFactors.add(i);
+            while (n % i == 0)
+                n /= i;
+        }
+        if(n>1){
+            primeFactors.add(n);
+        }
+        return primeFactors;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        numberproblems obj = new numberproblems();
+        List<Integer> ans = obj.getprimes(num);
+        for(int factors: ans){
+            System.out.println(factors);
+        }
+    }
+}
+
+
+
+
+//Strong number -> it is sum of factorail of each digit in given number is equal to original number.
+import java.util.*;
+class numberproblems{
+    static boolean factorial_sum(int num){
+        int temp = num;
+        int sum = 0;
+        while(num != 0) {
+            int digit = num % 10;
+            sum += factorial(digit);
+            num /= 10;
+        }
+        return sum == temp;
+    }
+    static int factorial(int n){
+        if(n == 0){
+            return 1;
+        }
+        return n * factorial(n-1);
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(factorial_sum(num))
+            System.out.println("Yes it is strong number.");
+        else
+            System.out.println("No it is not strong number.");
+
+    }
+}
+
+ */
+
+//Automorphic number.
+
+import java.util.*;
+class numberproblems{
+    static boolean automorphic_num(int n){
+        int squ = n*n;
+        return check_last_num(squ,n);
+    }
+    static boolean check_last_num(int num,int n){
+//        int m = num %100;
+//        return m == n;  ->thiis 2 lines works for only 1 or 2 digits
+
+        int temp = String.valueOf(n).length();
+        int digit =(int)Math.pow(10,temp);
+        return num % digit == n;            // this is for any number..
+    }
+
+//      while (N > 0) {
+//        // Check if last digit of N is equal to the last digit of its square
+//        if (N % 10 != sq % 10)
+//            return false;  // If digits don't match, return false
+//
+//        // Reduce the number and its square
+//        N /= 10;
+//        sq /= 10;
+//    }
+//
+//        return true;  // If all digits match, return true
+//}  // another way just varible name cahnged.
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(automorphic_num(num))
+            System.out.println("Automorphic_number");
+        else
+            System.out.println("Not Automorphic");
+        }
+    }
