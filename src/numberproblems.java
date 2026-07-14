@@ -704,7 +704,7 @@ class numberproblems{
     }
 }
 
- */
+
 
 //Automorphic number.
 
@@ -744,3 +744,263 @@ class numberproblems{
             System.out.println("Not Automorphic");
         }
     }
+
+
+
+//GCD->
+//brute force.
+import java.util.*;
+class numberproblems{
+    static int gcd(int n , int m) {
+        int gcd = 1;
+            for (int i = 1; i <=Math.min(n,m); i++) {
+                if (n % i == 0 && m % i ==0)
+                    gcd = i;
+            }
+
+        return gcd;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int res = gcd(num1,num2);
+        System.out.println(res);
+    }
+}
+
+
+
+//bettter approach..
+
+import java.util.*;
+class numberproblems{
+    static int gcd(int n , int m) {
+        for(int i = Math.min(n,m);i>0;i--){
+            if(n % i == 0 && m % i ==0) {
+                return i;
+            }
+
+        }
+        return 1;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int res = gcd(num1,num2);
+        System.out.println(res);
+    }
+}
+
+
+
+//optimal solu.
+
+import java.util.*;
+class numberproblems{
+    static int gcd(int n , int m) {
+       while(n>0 && m>0){
+           if(n>m){
+               n = n%m;
+           }
+           else{
+               m = m%n;
+           }
+       }
+       if(n ==0){
+           return m;
+       }else
+           return n;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int res = gcd(num1,num2);
+        System.out.println(res);
+    }
+}
+
+ //LCM of 2 number.
+
+
+import java.util.*;
+class numberproblems{
+    static int lcm(int n , int m) {
+        int max = Math.max(n, m);
+        int min = Math.min(n, m);
+        int multi = max;
+        for (int i = 2; multi % min != 0; i++) {
+            multi = max * i;
+        }
+        return multi;
+    }
+
+//       for(int i = 2;i<=Math.min(n,m);i++){
+//                multi = max;
+//               if(max % min == 0){
+//                   return max;     // not works for if any prime is present.
+//               }else{
+//                   max = max*i;
+//               }
+//           }
+//       return 1;
+//       }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int res = lcm(num1,num2);
+        System.out.println(res);
+    }
+}
+
+
+
+class Solution {
+
+    public int gcd(int a, int b) {
+        int gcd = 1;
+        for (int i = 1; i <= Math.min(a, b); i++) {
+            if (a % i == 0 && b % i == 0) {
+                gcd = i;  // Update GCD
+            }
+        }
+        return gcd;
+    }
+    // Function to calculate GCD using Euclid's Algorithm
+//    public int gcd(int a, int b) {
+//        if (b == 0) {
+//            return a;  // Base case: if b is 0, return a
+//        }
+//        return gcd(b, a % b);  // Recursively call GCD with (b, a % b)
+//}
+
+    // Function to calculate LCM using the GCD
+    public int calculateLCM(int a, int b) {
+        int g = gcd(a, b);  // Calculate GCD of a and b
+        return (a * b) / g;  // Calculate LCM using the formula LCM = (a * b) / GCD
+    }
+}
+
+public class numberproblems {
+    public static void main(String[] args) {
+        int a = 4, b = 8;
+        Solution obj = new Solution();
+        int lcm = obj.calculateLCM(a, b);  // Get the LCM
+        System.out.println("The LCM of the two given numbers is " + lcm);  // Output the result
+    }
+}
+
+
+
+//harshad or niven number..
+
+// 378 = 3+7+8 =18 378 % 18 == 0 it harsad number.
+
+import java.util.Scanner;
+class numberproblerms{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        String str = Integer.toString(num);
+        int sum = 0;
+        for(int i = 0;i < str.length();i++){
+            sum += str.charAt(i) - '0';+
+        }
+        if(num % sum == 0){
+            System.out.println("it is harshad number");
+        }else
+                System.out.println("it is not");
+
+    }
+}
+
+
+
+//abudant number or not -> 18 -> divisor - >1,2,3,6,9 -> 1+2+3+6+9 = 21 21>18 it is abudent number.
+
+import java.util.Scanner;
+class nmumberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int sum = 0;
+        for(int i = 1;i<= Math.sqrt(num);i++){
+            if(num % i == 0) {
+                if (num / i == i) {
+                    sum += i;
+                } else {
+                    sum += i;
+                    sum += num / i;
+                }
+            }
+        }
+        sum -=num;
+        if(sum > num){
+            System.out.println("It is Abudant number");
+        }
+        else
+            System.out.println("it is not");
+    }
+}
+
+
+
+//sum of digit of a number.
+//472 -> 4+7+2 -> 13->1+3 ->4 as output.
+import java.util.Scanner;
+class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int res = sum_digit_num(num);
+        System.out.println(res);
+    }
+
+    private static int sum_digit_num(int num) {
+        if(num == 0)
+            return 0;
+        return 1+(num-1)%9;
+    }
+}
+
+
+ */
+
+//permutation -
+
+// Solution class
+class Solution {
+    // Function to calculate nPr
+    public int permutation(int n, int r) {
+        // Initialize result
+        int ans = 1;
+
+        // Multiply n * (n-1) * ... * (n-r+1)
+        for (int i = n; i >= n - r + 1; i--) {
+            ans *= i;
+        }
+
+        // Return result
+        return ans;
+    }
+}
+
+// Main class
+public class numberproblems {
+    public static void main(String[] args) {
+        // Create object of Solution class
+        Solution sol = new Solution();
+
+        // Input values
+        int n = 6, r = 4;
+
+        // Call permutation function
+        int result = sol.permutation(n, r);
+
+        // Print result
+        System.out.println(result);
+    }
+}
