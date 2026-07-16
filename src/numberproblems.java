@@ -967,7 +967,7 @@ class numberproblems{
 }
 
 
- */
+
 
 //permutation -
 
@@ -1002,5 +1002,70 @@ public class numberproblems {
 
         // Print result
         System.out.println(result);
+    }
+}
+
+
+import java.util.Scanner;
+class numberproblems {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int cnt = 0;
+        for (int i = a; i <= b; i++) {
+            if (i % 2 == 0) {
+                if (cnt == 0) {
+                    System.out.print(i);
+                    cnt++;
+                } else {
+                    System.out.print("," + i);
+                }
+            }
+
+        }
+    }
+}
+
+
+
+import java.util.Scanner;
+class numberproblems {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        boolean first = true;
+        for (int i = a; i <= b; i++) {
+            if (i % 2 == 0) {
+                if (!first) {
+                    System.out.print(",");
+                }
+                    System.out.print(i);
+                    first = false;
+            }
+
+        }
+    }
+}
+
+ */
+
+import java.util.Scanner;
+class numberproblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        StringBuilder str = new StringBuilder();
+        for(int i = a;i<=b;i++){
+            if(i % 2 == 0){
+                str.append(i).append(",");
+            }
+        }
+        if(str.length() > 0)
+            str.setLength(str.length()-1);
+        System.out.println(str);
     }
 }
